@@ -9,8 +9,10 @@ from time import sleep
 import re
 import html2text
 
+#This code was tested in brazilian olx only
+
 # Setting the path and driver
-PATH = "C:\Program Files (x86)\chromedriver.exe"
+PATH = "C:\Program Files (x86)\chromedriver.exe" # Set the chromedriver local
 driver = webdriver.Chrome(PATH)
 driver.maximize_window()
 div = '1'  # For concatenate and set a div loop
@@ -20,7 +22,7 @@ n = 1
 # Open olx page
 while n != 55:  # change this value according to numbers of pages you want to scrape
     ns = str(n)
-    # You need to find the page pattern and concatenate with 'ns' to set the loop
+    # apply filters to your research, find the results page pattern and concatenate with 'ns' to set the loop
     page = driver.get("https://ba.olx.com.br/grande-salvador/imoveis/venda/apartamentos?f=p&o="+ns+"&pe=200000&sf=1")
     print(driver.title)
     og = driver.window_handles[0]
